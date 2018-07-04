@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.seleniumhq.selenium:selenium-firefox-driver:3.9.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-firefox-driver/3.9.1/9d8c9db0d86054527033cd1e97c862b5597ac00/selenium-firefox-driver-3.9.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
