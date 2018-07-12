@@ -12,14 +12,7 @@ public class ApplicationManager {
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
 
-  public static boolean isAlertPresent(ChromeDriver wd) {
-    try {
-      wd.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
+
 
   public void init() {
     wd = new ChromeDriver();
