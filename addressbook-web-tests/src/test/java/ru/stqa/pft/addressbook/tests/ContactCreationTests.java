@@ -17,12 +17,19 @@ public class ContactCreationTests extends TestBase {
   public void setUp() throws Exception {
     wd = new ChromeDriver();
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    wd.get("http://localhost/addressbook/");
+    wd.findElement(By.name("user")).click();
+    wd.findElement(By.name("user")).clear();
+    wd.findElement(By.name("user")).sendKeys("admin");
+    wd.findElement(By.name("pass")).click();
+    wd.findElement(By.name("pass")).clear();
+    wd.findElement(By.name("pass")).sendKeys("secret");
+    wd.findElement(By.xpath("//input[@value='Login']")).click();
   }
 
   @Test
   public void testContactsCreation() throws Exception {
-    app.get("http://localhost/addressbook/");
-   wd.findElement(By.xpath("//input[@value='Login']")).click();
+
     wd.findElement(By.linkText("add new")).click();
     wd.findElement(By.name("firstname")).click();
     wd.findElement(By.name("firstname")).clear();
@@ -52,11 +59,11 @@ public class ContactCreationTests extends TestBase {
     wd.findElement(By.name("email3")).clear();
     wd.findElement(By.name("email3")).sendKeys("3testemail");
     wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
-    wd.findElement(By.linkText("home")).click();
+    //wd.findElement(By.linkText("home")).click();
   }
 
   @AfterMethod
   public void tearDown() {
-    app.stop();
+    wd.quit();
   }
 }
