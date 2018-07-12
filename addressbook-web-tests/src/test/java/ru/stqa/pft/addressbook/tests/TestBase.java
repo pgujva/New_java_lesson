@@ -18,6 +18,10 @@ public class TestBase {
     app.stop();
   }
 
+  public void hh(){
+    System.out.println("тест");
+  }
+
   public ApplicationManager getApp() {
     return app;
   }
