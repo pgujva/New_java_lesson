@@ -1,30 +1,30 @@
 package ru.stqa.pft.addressbook.tests;
 
 public class ContactData {
-  private final String name;
+  private final String firstname;
   private final String lastname;
   private final String address;
-  private final String homephone;
-  private final String mobilephone;
-  private final String workphone;
-  private final String firstEmail;
-  private final String secondEmail;
-  private final String thirdEmail;
+  private final String home;
+  private final String mobile;
+  private final String work;
+  private final String email1;
+  private final String email2;
+  private final String email3;
 
-  public ContactData(String name, String lastname, String address, String homephone, String mobilephone, String workphone, String firstEmail, String secondEmail, String thirdEmail) {
-    this.name = name;
+  public ContactData(String firstname, String lastname, String address, String home, String mobile, String work, String email1, String email2, String email3) {
+    this.firstname = firstname;
     this.lastname = lastname;
     this.address = address;
-    this.homephone = homephone;
-    this.mobilephone = mobilephone;
-    this.workphone = workphone;
-    this.firstEmail = firstEmail;
-    this.secondEmail = secondEmail;
-    this.thirdEmail = thirdEmail;
+    this.home = home;
+    this.mobile = mobile;
+    this.work = work;
+    this.email1 = email1;
+    this.email2 = email2;
+    this.email3 = email3;
   }
 
-  public String getName() {
-    return name;
+  public String getFirstname() {
+    return firstname;
   }
 
   public String getLastname() {
@@ -35,27 +35,27 @@ public class ContactData {
     return address;
   }
 
-  public String getHomephone() {
-    return homephone;
+  public String getHome() {
+    return home;
   }
 
-  public String getMobilephone() {
-    return mobilephone;
+  public String getMobile() {
+    return mobile;
   }
 
-  public String getWorkphone() {
-    return workphone;
+  public String getWork() {
+    return work;
   }
 
-  public String getFirstEmail() {
-    return firstEmail;
+  public String getEmail1() {
+    return email1;
   }
 
-  public String getSecondEmail() {
-    return secondEmail;
+  public String getEmail2() {
+    return email2;
   }
 
-  public String getThirdEmail() {
-    return thirdEmail;
+  public String getEmail3() {
+    return email3;
   }
 }
