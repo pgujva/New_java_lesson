@@ -34,11 +34,19 @@ public class ContactHelper extends HelperBase {
   }
 
   public void selectContact() {
-   click(By.id("251"));
+   click(By.id("244"));
   }
 
   public void deleteContact() {
     click(By.xpath("//input[@value='Delete']"));
     wd.switchTo().alert().accept();
+  }
+
+  public void initContactModification() {
+    click(By.xpath("(//img[@alt='Edit'])[9]"));
+  }
+
+  public void submitContactDelition() {
+    click(By.xpath("(//input[@name='update'])[2]"));
   }
 }
