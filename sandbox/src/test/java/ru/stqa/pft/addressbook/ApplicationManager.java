@@ -2,6 +2,7 @@ package ru.stqa.pft.addressbook;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import sun.plugin2.util.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
