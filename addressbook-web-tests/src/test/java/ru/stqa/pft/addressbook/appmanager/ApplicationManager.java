@@ -1,11 +1,13 @@
 package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
@@ -24,12 +26,13 @@ public class ApplicationManager {
 
   public void init() {
 
-    if (browser == BrowserType.CHROME){
+    if (Objects.equals(browser, BrowserType.CHROME)){
       wd = new ChromeDriver();
-    } else if(browser == BrowserType.FIREFOX) {
+    } else if(Objects.equals(browser, BrowserType.FIREFOX)) {
       wd = new FirefoxDriver();
+    }  else if(Objects.equals(browser, BrowserType.IE)) {
+      wd = new InternetExplorerDriver();
     }
-
      wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
      wd.get("http://localhost/addressbook/");
     contactHelper = new ContactHelper(wd);
