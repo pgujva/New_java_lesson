@@ -11,7 +11,7 @@ public class ContactModificationTests extends TestBase{
     app.getContactHelper().selectContact();
     app.getContactHelper().initContactModification();
     app.getContactHelper().fillContactForm(new ContactData("name111", "lastname222","newaddress",
-            "44444","45555","7777","newmail1","newmail2","newmail3"));
+            "44444","45555","7777","newmail1","newmail2","newmail3",null));
     app.getContactHelper().submitContactDelition();
   }
 }
