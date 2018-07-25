@@ -15,7 +15,7 @@ public class ContactCreationTests extends TestBase {
             "testaddress",
             "1111", "222", "333",
             "1testemail", "2testemail", "3testemail",
-            "test1"));
+            "тест1"));
     app.getContactHelper().submitContactCreation();
 
   }
