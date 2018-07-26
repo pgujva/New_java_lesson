@@ -10,13 +10,11 @@ public class ContactCreationTests extends TestBase {
   @Test
   public void testContactsCreation() throws Exception {
     app.getNavigationHelper().goToHomePage();
-    app.getContactHelper().initContactCreation();
-    app.getContactHelper().fillContactForm(new ContactData("testname", "testLastname",
-            "testaddress",
-            "1111", "222", "333",
-            "1testemail", "2testemail", "3testemail",
-            "тест1"));
-    app.getContactHelper().submitContactCreation();
+   app.getContactHelper().createContact(new ContactData("testname", "testLastname",
+           "testaddress",
+           "1111", "222", "333",
+           "1testemail", "2testemail", "3testemail",
+           "тест1"));
 
   }
 }
