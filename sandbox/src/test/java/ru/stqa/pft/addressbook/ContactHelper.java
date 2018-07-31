@@ -1,13 +1,18 @@
 package ru.stqa.pft.addressbook;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper {
 
   private ChromeDriver wd;
+
   public ContactHelper(ChromeDriver wd) {
-    this.wd=wd;
+    this.wd = wd;
   }
 
   public void submitContactCreation() {
@@ -36,4 +41,13 @@ public class ContactHelper {
     wd.findElement(By.linkText("add new")).click();
   }
 
+  public void getContactLust() {
+    List<ContactData> contacts = new ArrayList<ContactData>();
+    List<WebElement> elements = new ArrayList<WebElement>();
+    for (WebElement element : elements) {
+      elements = wd.findElements(By.name("entry"));
+     String name = element.getText();
+      System.out.println(name);
+    }
+  }
 }
