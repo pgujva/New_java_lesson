@@ -15,7 +15,7 @@ public class GroupModificationTests extends TestBase {
       app.getGroupHelper().createGroup(new GroupData("тест1", "тест2", "тест3"));
     }
     List<GroupData> before=app.getGroupHelper().getGroupList();
-    app.getGroupHelper().selectGroup(before.size()-1);
+    app.getGroupHelper().selectGroup(before.size()- 1);
     app.getGroupHelper().initGroupModification();
     app.getGroupHelper().fillGroupForm(new GroupData("1тест1", "2тест2", "3тест3"));
     app.getGroupHelper().submitGroupModification();

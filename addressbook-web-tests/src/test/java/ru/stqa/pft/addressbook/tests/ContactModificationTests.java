@@ -26,5 +26,7 @@ public class ContactModificationTests extends TestBase{
     app.getContactHelper().submitContactDelition();
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(), before.size());
+
+
   }
 }
