@@ -26,8 +26,12 @@ public class Point {
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for(WebElement element:elements) {
     List<WebElement> cells = element.findElements(By.tagName("td"));
-    String Lastname = cells.get(1).getText();
-      String Firsttname = cells.get(2).getText();
+      String firstname = cells.get(2).getText();
+      String lastname = cells.get(1).getText();
+      String id = element.findElement(By.tagName("input")).getAttribute("value");
+      System.out.println(firstname);
+      System.out.println(lastname);
+      System.out.println(id);
 
     }
     wd.quit();
