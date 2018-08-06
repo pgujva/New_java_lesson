@@ -12,6 +12,7 @@ public class TestBase {
   public void setUp() throws Exception {
     app.init();
 
+
   }
 
   @AfterMethod
@@ -19,6 +20,7 @@ public class TestBase {
     app.stop();
 
   }
+
 
   public ApplicationManager getApp() {
     return app;
