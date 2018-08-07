@@ -8,6 +8,13 @@ import java.util.List;
 
 public class GroupDeletionTests extends TestBase {
 
+  @BeforeMethod
+  public void ensurePreconditions() {
+    app.getNavigationHelper().gotoGroupPage();
+    if (!app.getGroupHelper().isThereGroup()) {
+      app.getGroupHelper().createGroup(new GroupData("тест1", "тест2", "тест3"));
+    }
+  }
 
   @Test
   public void testGroupDeletion() throws Exception {
@@ -26,8 +33,3 @@ public class GroupDeletionTests extends TestBase {
     Assert.assertEquals(before, after);
   }
 }
-
-
-
-
-
