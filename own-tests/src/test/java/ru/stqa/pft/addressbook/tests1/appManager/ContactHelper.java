@@ -4,40 +4,50 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.stqa.pft.addressbook.tests1.model.ContactData;
 
-public class ContactHelper {
-  ChromeDriver wd;
+public class ContactHelper extends HelperBase{
 
   public ContactHelper(ChromeDriver wd) {
-    this.wd=wd;
+    super(wd);
   }
 
   public void returnToHomePage() {
-    wd.findElement(By.linkText("home page")).click();
+    click(By.linkText("home page"));
   }
 
   public void submitContactCreation() {
-    wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
+    click(By.xpath("(//input[@name='submit'])[2]"));
   }
 
   public void fillContactForm(ContactData contactData) {
-    wd.findElement(By.name("firstname")).click();
-    wd.findElement(By.name("firstname")).clear();
-    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
-    wd.findElement(By.name("lastname")).click();
-    wd.findElement(By.name("lastname")).clear();
-    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
-    wd.findElement(By.name("address")).click();
-    wd.findElement(By.name("address")).clear();
-    wd.findElement(By.name("address")).sendKeys(contactData.getAddress());
-    wd.findElement(By.name("email")).click();
-    wd.findElement(By.name("email")).clear();
-    wd.findElement(By.name("email")).sendKeys(contactData.getMail1());
-    wd.findElement(By.name("home")).click();
-    wd.findElement(By.name("home")).clear();
-    wd.findElement(By.name("home")).sendKeys(contactData.getHomePhone());
+    type(By.name("firstname"), contactData.getFirstname());
+    type(By.name("lastname"), contactData.getLastname());
+    type(By.name("address"), contactData.getAddress());
+    type(By.name("email"), contactData.getMail1());
+    type(By.name("home"), contactData.getHomePhone());
   }
 
   public void initContactCreation() {
-    wd.findElement(By.linkText("add new")).click();
+    click(By.linkText("add new"));
+  }
+
+  public void initContactDeletion() {
+    wd.findElement(By.id("284")).click();
+  }
+
+  public void submitContactDeletion() {
+    click(By.xpath("//input[@value='Delete']"));
+    wd.switchTo().alert().accept();
+  }
+
+  public void initContactModification() {
+    wd.findElement(By.xpath("xpath=(//img[@alt='Edit'])[3]")).click();
+  }
+
+  public void fillContactModification(ContactData contactData) {
+    type(By.name("firstname"), contactData.getFirstname());
+    type(By.name("lastname"), contactData.getLastname());
+    type(By.name("address"), contactData.getAddress());
+    type(By.name("email"), contactData.getMail1());
+    type(By.name("home"), contactData.getHomePhone());
   }
 }
