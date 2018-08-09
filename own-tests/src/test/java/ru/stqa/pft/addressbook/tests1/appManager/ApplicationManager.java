@@ -6,8 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
+
   ChromeDriver wd;
+  private NavigationHelper navigationHelper;
+  private GroupHelper groupHelper;
   private ContactHelper contactHelper;
+
 
   public void login(String login, String pass) {
     wd.findElement(By.name("user")).click();
@@ -23,7 +27,10 @@ public class ApplicationManager {
     wd = new ChromeDriver();
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
+    navigationHelper = new NavigationHelper(wd);
     contactHelper = new ContactHelper(wd);
+    groupHelper = new GroupHelper(wd);
+
     login("admin", "secret");
   }
 
@@ -33,5 +40,14 @@ public class ApplicationManager {
 
   public ContactHelper getContactHelper() {
     return contactHelper;
+  }
+
+
+  public GroupHelper getGroupHelper() {
+    return groupHelper;
+  }
+
+  public NavigationHelper getNavigationHelper() {
+    return navigationHelper;
   }
 }

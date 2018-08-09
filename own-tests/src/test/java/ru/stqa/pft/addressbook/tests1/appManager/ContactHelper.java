@@ -11,7 +11,7 @@ public class ContactHelper {
     this.wd=wd;
   }
 
-  public void goToHomePage() {
+  public void returnToHomePage() {
     wd.findElement(By.linkText("home page")).click();
   }
 
