@@ -1,6 +1,7 @@
 package ru.stqa.pft.addressbook.tests1.appManager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HelperBase {
@@ -18,5 +19,14 @@ public class HelperBase {
     click(locator);
     wd.findElement(locator).clear();
     wd.findElement(locator).sendKeys(text);
+  }
+
+  protected boolean isElementPresent(By locator) {
+      try {
+          wd.findElement(locator);
+          return true;
+      }catch (NoSuchElementException ex) {
+          return false;
+      }
   }
 }

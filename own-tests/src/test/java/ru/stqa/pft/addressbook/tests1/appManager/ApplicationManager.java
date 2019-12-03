@@ -16,7 +16,7 @@ public class ApplicationManager {
 
   public void init() {
     wd = new ChromeDriver();
-    wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
     navigationHelper = new NavigationHelper(wd);
     contactHelper = new ContactHelper(wd);

@@ -9,9 +9,9 @@ public class ContactDeletionTests extends TestBase {
     public void testContactsDeletions() throws Exception {
         app.getNavigationHelper().goToHomepage();
 
-        if (app.getContactHelper().isThereContact1() == true) {
+        if (!app.getContactHelper().isThereContact()) {
             app.getContactHelper().initContactCreation();
-            app.getContactHelper().fillContactForm(new ContactData("test14444", "test2", "newAddress", "1mail", "123456"));
+            app.getContactHelper().fillContactForm(new ContactData("test14444", "test2", "newAddress", "1mail", "123456",null),false);
             app.getContactHelper().submitContactCreation();
             app.getContactHelper().returnToHomePage();
         }

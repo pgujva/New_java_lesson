@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.tests1.model.ContactData;
 
 public class ContactHelper extends HelperBase {
@@ -20,12 +22,18 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("(//input[@name='submit'])[2]"));
     }
 
-    public void fillContactForm(ContactData contactData) {
+    public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
         type(By.name("address"), contactData.getAddress());
         type(By.name("email"), contactData.getMail1());
         type(By.name("home"), contactData.getHomePhone());
+        if(creation) {
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        } else {
+        Assert.assertFalse(isElementPresent(By.name("new_group")));
+
+        }
     }
 
     public void initContactCreation() {
@@ -53,10 +61,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("home"), contactData.getHomePhone());
     }
 
-    public boolean isThereContact1() {
-        if (wd.findElements(By.name("entry")).size()>0) {
-        return false;} else return true;
-    }
 
 
 
@@ -65,12 +69,4 @@ public class ContactHelper extends HelperBase {
     }
 
 
-        protected boolean isElementPresent(By locator) {
-            try {
-                wd.findElement(locator);
-                return true;
-            }catch (NoSuchElementException ex) {
-                return false;
-            }
-        }
-    }
+}
