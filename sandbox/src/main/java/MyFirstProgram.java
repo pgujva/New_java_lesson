@@ -3,6 +3,8 @@ public class MyFirstProgram {
 
     public static void main(String[] args) {
 
+     Zerg zerg = new Zerg();
+
         int a = 1;
         int b = 2;
         int e = 14;
@@ -15,9 +17,17 @@ public class MyFirstProgram {
         //System.out.println(m3);
         System.out.println(m4);
         print3("ввцв");
-
-
+     System.out.println("1");
+     System.out.println("2");
+     System.out.print("3");
+     System.out.println("4");
+     System.out.println("5");
+     System.out.println("MAY 1 2012");
+     System.out.println(1*2*3*4*5*6*7*8*9*10);
+     String text = "Cat is " + zerg;
+     System.out.println(text);
     }
+
 
 
     public static int min2(int c, int d) {
