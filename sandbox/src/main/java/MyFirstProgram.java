@@ -26,6 +26,12 @@ public class MyFirstProgram {
      System.out.println(1*2*3*4*5*6*7*8*9*10);
      String text = "Cat is " + zerg;
      System.out.println(text);
+     String text1= "zerg is" + zerg.toString();
+     int ca = 5;
+     String c1 = Integer.toString(ca);
+     String text3= "zerg is" + 5;
+     int g =5;
+     String рр = zerg.toString() + g;
     }
 
 
