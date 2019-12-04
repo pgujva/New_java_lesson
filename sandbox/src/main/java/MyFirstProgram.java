@@ -1,10 +1,12 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 public class MyFirstProgram {
 
     public static void main(String[] args) {
 
      Zerg zerg = new Zerg();
-
+zerg.setAge(4);
         int a = 1;
         int b = 2;
         int e = 14;
@@ -32,6 +34,7 @@ public class MyFirstProgram {
      String text3= "zerg is" + 5;
      int g =5;
      String рр = zerg.toString() + g;
+      BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
 
